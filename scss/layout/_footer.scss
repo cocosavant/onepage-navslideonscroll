@@ -1,0 +1,105 @@
+// -------------------------------------------------
+//    Footer scss
+// -------------------------------------------------
+
+
+footer, .footer {
+	background: $salmon-dk;
+	padding: 130px $two-36th;
+
+	@media #{$md-breakpoint} {
+		padding: 200px $two-36th;
+	}
+
+	.inner-wrapper {
+		width: $thirty-six-36th;
+
+		@media #{$md-breakpoint} {
+			float: left;
+			width: $eighteen-36th;
+		}
+
+		.one,
+		.two {
+		  overflow: hidden;
+			text-align: center;
+			width: $thirty-six-36th;
+
+			@media #{$md-breakpoint} {
+				float: left;
+				text-align: left;
+        width: auto;
+			}
+
+			span {
+				color: $beige;
+				display: block;
+				font-family: $font-extrabold, $font-stack;
+				font-size: 1.6rem;
+				text-transform: uppercase;
+			}
+
+			a {
+				color: $white;
+				display: inline-block;
+				font-family: $font-regular, $font-stack;
+				font-size: 2.8rem;
+				margin-top: 20px;
+				opacity: 1;
+
+				@media #{$md-breakpoint} {
+					display: inline-block;
+					float: left;
+				}
+			}
+		}
+
+		.one {
+			margin-bottom: 60px;
+
+			@media #{$md-breakpoint} {
+				float: right;
+				margin-bottom: 0;
+				margin-right: 37px;
+			}
+
+			@media #{$lg-breakpoint} {
+				margin-right: 26px;
+			}
+		}
+
+		.two {
+			a {
+				float: left;
+			}
+
+			@media #{$md-breakpoint} {
+				float: left;
+				margin-left: 37px;
+			}
+
+			@media #{$lg-breakpoint} {
+				margin-left: 26px;
+			}
+
+			div {
+    		margin: auto;
+				width: 230px;
+
+    		@media #{$md-breakpoint} {
+					width: auto;
+				}
+			}
+
+	    .dot {
+	      background: $white;
+	      border-radius: 50%;
+	      display: inline-block;
+	      float: left;
+	      height: 6px;
+	      margin: 38px 14px 0 14px;
+	      width: 6px;
+	    }
+	  }
+	}
+}

@@ -1,0 +1,108 @@
+// ------------------------------------------------- 
+//    This file contains all application-wide Sass mixins.
+// -------------------------------------------------
+
+
+
+// Event wrapper
+// @author Harry Roberts
+// @param {Bool} $self [false] - Whether or not to include current selector
+// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+// SVG sprite
+@mixin svg-bg-with-fallback($file_name) {
+  background-repeat: no-repeat;
+  background-image: inline-image('#{$file_name}.svg', image/svg\+xml);
+  html.no-svg & {
+    background-image: image-url('#{$file_name}.png');
+  }
+}
+
+
+// CTAs
+@mixin cta-button ($bg-color, $text-color, $border-color, $hover-bg-color, $hover-text-color, $hover-border-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 1.5rem 3.1rem 1.1rem;
+  transition: all 0.25s ease-in;
+
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.is-active {
+    background-color: $hover-bg-color;
+    color: $hover-text-color;
+    outline: none;
+    transition: all 0.25s ease-in;
+  }
+
+  @media #{$md-breakpoint} {
+    background-image: linear-gradient(to right, $hover-bg-color 50%, $bg-color 50%);
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+
+    &:hover,
+    &:active,
+    &:focus,
+    &.is-active {
+      background-position: left bottom;
+    }
+  }
+}
+
+
+@mixin cta-button-trans ($base-color, $hover-base-color, $hover-text-color) {
+  background-color: transparent;
+  border: 1px solid $base-color; 
+  color: $base-color;
+  padding: 1.4rem 3rem 1rem;
+  transition: all 0.25s ease-in;
+
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.is-active {
+    background-color: $hover-base-color;
+    border: 1px solid $hover-base-color;
+    color: $hover-text-color;
+    outline: none;
+  }
+
+  @media #{$md-breakpoint} {
+    background-image: linear-gradient(to right, $hover-base-color 50%, transparent 0);
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    background-position: right bottom; 
+
+    &:hover,
+    &:active,
+    &:focus,
+    &.is-active {
+      background-position: left bottom;
+    }
+  }
+}
+
+
+
+
+

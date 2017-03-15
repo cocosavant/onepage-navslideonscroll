@@ -1,0 +1,160 @@
+// -------------------------------------------------
+//    Base scss
+// -------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+// colors
+body,
+html {
+  color: $primary-text;
+}
+
+body {
+  height: 2000px;
+}
+
+
+.desktop{
+  display: none;
+
+  @media #{$lg-breakpoint} {
+    display: block;
+  }
+}
+
+.mobile {
+  display: block;
+
+  @media #{$lg-breakpoint} {
+    display: none;
+  }
+}
+
+.bg-white {
+  background-color: $white;
+  color: $black;
+}
+.bg-salmon {
+  background-color: $salmon-dk;
+  color: $white;
+
+  span {
+    font-size: 3rem;
+    text-transform: none;
+
+    @media #{$xs-breakpoint} {
+     font-size: 4.6rem;
+    }
+
+    @media #{$sm-breakpoint} {
+     font-size: 5rem;
+    }
+
+    @media #{$lg-breakpoint} {
+     font-size: 6rem;
+    }
+
+    &:first-child,
+    &:last-child {
+      color: $secondary-text;
+      text-transform: uppercase;
+    }
+
+    &:first-child {
+      font-size: 1.6rem;
+      position: relative;
+      text-transform: uppercase;
+      top: 2px;
+      vertical-align: super;
+    }
+
+    &:last-child {
+      display: none;
+
+      @media #{$xs-breakpoint} {
+        display: block;
+        font-size: 1.8rem;
+      }
+
+      @media #{$sm-breakpoint} {
+        display: inline-block;
+      }
+
+      @media #{$lg-breakpoint} {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+.bg-black {
+  background-color: $black;
+}
+.bg-beige {
+  background-color: $beige;
+  color: $black;
+}
+
+
+// links
+a {
+   cursor: pointer;
+   text-decoration: none;
+
+  &:hover {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    text-decoration: none;
+  }
+
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:active {
+    font-weight: 400;
+  }
+}
+
+// divs equal height
+.row-height {
+  display: table;
+  table-layout: fixed;
+}
+
+.row-height [class^="col-"] {
+  display: table-cell;
+  float: none;
+}
+
+// css lines over header images
+.diagonal-lines {
+  background: repeating-linear-gradient(
+    -55deg,
+    #222,
+    #222 10px,
+    #333 10px,
+    #333 20px
+  );
+}
+
+
+
+
+
+

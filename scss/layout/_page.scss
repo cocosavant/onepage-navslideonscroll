@@ -1,0 +1,342 @@
+// -------------------------------------------------
+//    Pages base scss
+// -------------------------------------------------
+
+body {
+  background: $salmon-dk;
+  color: $white;
+}
+
+img {
+  display: block;
+}
+
+.main {
+  //padding: 100px $one-36th 0 $one-36th;
+  padding: 100px 0 0 0;
+  position: relative;
+}
+
+section {
+  overflow: hidden;
+  padding: 100px $two-36th;
+
+  @media #{$md-breakpoint} {
+    padding-left: $one-36th;
+    padding-right: $one-36th;
+  }
+
+  &.project {
+    .projects-in-dev {
+
+      @media #{$sm-breakpoint} {
+        margin-left: 33px;
+      }
+
+      > span {
+        display: block;
+        font-family: $font-extrabold;
+        font-size: 1.8rem;
+        margin: 100px 0 50px 0;
+        text-transform: uppercase;
+      }
+    }
+
+    ul.project-list {
+
+      li {
+        display: block;
+        font-family: $font-regular;
+        font-size: 3.2rem;
+        line-height: 1;
+        list-style-type: none;
+        padding: 14px 0;
+
+        @media #{$sm-breakpoint} {
+          font-size: 3.6rem;
+        }
+
+        &:first-child {
+          padding-top: 0;
+        }
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    article {
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      span {
+        display: inline-block;
+
+        @media #{$md-breakpoint} {
+          //margin-bottom: 40px;
+        }
+
+        &.title {
+          font-family: $font-regular;
+          font-size: 3rem;
+          font-weight: 100;
+          line-height: 1;
+          margin-left: -6px;
+
+          @media #{$sm-breakpoint} {
+            font-size: 4.6rem;
+          }
+
+          @media #{$md-breakpoint} {
+            font-size: 5rem;
+          }
+
+          @media #{$lg-breakpoint} {
+            font-size: 6rem;
+          }
+        }
+
+        &:first-child,
+        &:last-child {
+          color: $white;
+          font-family: $font-sansbold;
+          opacity: .3;
+          text-transform: uppercase;
+        }
+
+        &:first-child {
+          font-size: 1.6rem;
+          line-height: 1;
+          margin-top: 2px;
+          vertical-align: top;
+          width: 28px;
+
+          @media #{$sm-breakpoint} {
+            font-size: 1.8rem;
+            width: 33px;
+          }
+
+          @media #{$md-breakpoint} {
+            width: 40px;
+          }
+
+          @media #{$lg-breakpoint} {
+            font-size: 1.8rem;
+            line-height: 10px;
+            margin-top: 7px;
+          }
+        }
+
+        &:last-child {
+          display: block;
+          font-size: 1.8rem;
+          line-height: 1;
+          margin-left: $three-36th;
+          width: auto;
+
+          @media #{$sm-breakpoint} {
+            margin-left: 33px;
+          }
+
+          @media #{$md-breakpoint} {
+            display: inline-block;
+            margin-left: 0;
+          }
+
+          @media #{$lg-breakpoint} {
+            font-size: 1.4rem;
+          }
+        }
+
+      }
+    }
+
+  }
+
+  &.experience {
+
+    article {
+      color: $black;
+      line-height: 1;
+      margin-top: 60px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      span {
+        display: inline-block;
+        font-family: $font-sansbold;
+        font-weight: 100;
+        font-size: 1.6rem;
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      div {
+        font-family: $font-regular;
+        font-size: 2rem;
+        line-height: 2.4rem;
+        margin-top: 30px;
+
+        @media #{$md-breakpoint} {
+          font-size: 2.2rem;
+        }
+
+        @media #{$lg-breakpoint} {
+          line-height: 2.6rem;
+        }
+
+      }
+
+      &.about {
+        margin: 60px 15px 0 15px;
+
+        a {
+          cursor: pointer;
+          opacity: 1;
+        }
+
+        .btn {
+          background: $white;
+          border: 1px solid $black;
+          color: $black;
+          display: inline-block;
+          font-family: $font-sansbold;
+          font-size: 2.2rem;
+          margin: auto;
+          padding: 30px;
+          text-align: center;
+          text-transform: uppercase;
+          width: 100%;
+
+          @media #{$sm-breakpoint} {
+            margin-right: 60px;
+            width: auto;
+          }
+
+          &.down {
+            margin-bottom: 30px;
+
+            &:before {
+              content: url(../img/arrow-d.png);
+              margin-right: 10px;
+            }
+
+            @media #{$sm-breakpoint} {
+              margin-bottom: auto;
+            }
+          }
+
+          &.right {
+            &:before {
+              content: url(../img/arrow-r.png);
+              margin-right: 10px;
+            }
+
+            @media #{$sm-breakpoint} {
+              margin-right: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.gallery {
+    padding: 100px $three-36th;
+
+    a {
+      color: $black;
+    }
+
+    @media #{$sm-breakpoint} {
+      padding: 100px $one-36th;
+    }
+
+    article {
+      float: left;
+      width: $thirty-six-36th;
+
+      &:first-child {
+        div {
+          margin-top: 0px;
+        }
+      }
+
+      @media #{$sm-breakpoint} {
+        width: $eighteen-36th;
+        padding: 0 $one-36th;
+
+        &:first-child,
+        &:nth-child(2) {
+          div {
+            margin-top: 0;
+          }
+        }
+      }
+
+      @media #{$lg-breakpoint} {
+        width: $twelve-36th;
+
+        &:first-child,
+        &:nth-child(2),
+        &:nth-child(3) {
+          div {
+            margin-top: 0;
+          }
+        }
+      }
+
+      div {
+        display: block;
+        margin-top: 60px;
+
+        img {
+          width: 100%;
+        }
+
+        span {
+          display: block;
+
+          &:first-of-type {
+            font-family: $font-sansbold;
+            font-size: 1.2rem;
+            margin: 20px 0 14px 0;
+            text-transform: uppercase;
+
+            @media #{$md-breakpoint} {
+              font-size: 1.4rem;
+              margin: 30px 0 14px 0;
+            }
+          }
+
+          &:last-of-type {
+            font-family: $font-regular;
+            font-size: 1.8rem;
+            line-height: 2.6rem;
+
+            @media #{$md-breakpoint} {
+              font-size: 2.2rem;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
